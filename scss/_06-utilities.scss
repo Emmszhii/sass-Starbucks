@@ -1,0 +1,87 @@
+$colors: (
+  "primary": $clr-primary,
+  "dark-primary": $clr-dark-primary,
+  "dark-secondary": $clr-dark-secondary,
+  "light-primary": $clr-light-primary,
+  "light-secondary": $clr-light-secondary,
+);
+
+@each $key, $val in $colors {
+  .bg {
+    &--#{$key} {
+      background: $val;
+    }
+  }
+  .text {
+    &--#{$key} {
+      color: $val;
+    }
+  }
+}
+
+$displays: flex, grid, block;
+
+@each $display in $displays {
+  .d--#{$display} {
+    display: $display;
+  }
+}
+
+$alignments: (
+  "center": center,
+  "justify": justify,
+);
+
+@each $key, $val in $alignments {
+  .text {
+    &--#{key} {
+      text-align: $val;
+    }
+  }
+}
+
+@for $i from 1 through 20 {
+  .py--#{$i} {
+    padding: $i + rem 0;
+  }
+  .ml--#{$i} {
+    margin-left: $i + rem;
+  }
+}
+
+$justify: (
+  "start": flex-start,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "center": center,
+);
+
+@each $key, $val in $justify {
+  .justify--#{$key} {
+    justify-content: $val;
+  }
+  .align--#{$key} {
+    align-items: $val;
+  }
+}
+
+@for $i from 1 through 6 {
+  .mb--#{$i} {
+    margin-bottom: $i + rem;
+  }
+  .gap--#{$i} {
+    gap: $i + rem;
+  }
+  .py--#{$i} {
+    padding: $i + rem 0;
+  }
+}
+
+$alignments: left, right, center;
+
+@each $alignment in $alignments {
+  .text--#{$alignment} {
+    text-align: $alignment;
+  }
+}

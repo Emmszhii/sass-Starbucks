@@ -1,0 +1,76 @@
+@function set-color($color) {
+  @if (lightness($color) > 40) {
+    @return $clr-dark;
+  } @else {
+    @return $clr-light;
+  }
+}
+
+@mixin grid($cols: 1fr 1fr, $gap) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: ($gap);
+}
+
+@mixin gridUneven($cols, $gap) {
+  display: grid;
+  grid-template-columns: $cols;
+  grid-gap: ($gap);
+}
+
+@mixin mediaQuery($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin mediaQueryMax($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin scrollbar($color: $color-primary) {
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 2rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: darken($color, 5);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-gray;
+  }
+}
+
+@mixin centerAll($height: 1px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1px;
+}
+
+@mixin centerBetween() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin imgFit($width: 1px, $height: 1px) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@mixin psuedo($top: 0, $left: 0) {
+  content: "";
+  position: absolute;
+  left: $left;
+  top: $top;
+}

@@ -1,0 +1,21 @@
+.btn {
+  padding: 1.5rem 2rem;
+  display: inline-block;
+}
+
+.btn--primary {
+  color: $clr-light-primary;
+  background: $clr-primary;
+  &:hover {
+    background: darken($clr-primary, 9);
+  }
+}
+
+.btn--light {
+  color: $clr-dark-primary;
+  background: $clr-light-primary;
+
+  &:hover {
+    background: darken($clr-light-primary, 9);
+  }
+}
